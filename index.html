@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scentipens.</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <img src="images/logo.png" class="logo">
+            
+            <nav>
+                <ul>
+                 <li><a href="#homepage">Home</a></li>
+                 <li><a href="#product">Products</a></li>
+                 <li><a href="#about">About</a></li>
+                 <li><a href="add-to-cart.html">Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+        <div class="content">
+            <div id="homepage" class="Homepage">
+                <h1>Scentipen</h1>
+                <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" 
+                by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+            </div>
+
+             <div class="button-wrapper">
+                <a href="introduction.html">
+                    <button class="view-more">Introduction</button>
+                </a>
+            </div>
+
+            <div class="section-title">
+                <h1>Our Products</h1>
+                <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" 
+                by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+            </div>
+
+        <section id="product">
+            <div class="product-container">
+                <div class="product-card">
+                    <img src="images/red.png" alt="Product 1">
+                <div class="product-title">Red</div>
+                <p>₱80</p>
+                <button class="add-to-cart" data-name="Red" data-price="80">Add to Cart</button>
+             </div>
+             <div class="product-card">
+                     <img src="images/green.png" alt="Product 2">
+                <div class="product-title">Green</div>
+                <p>₱80</p>
+                <button class="add-to-cart" data-name="Green" data-price="80">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                    <img src="images/blue.png" alt="Product 3">
+                <div class="product-title">Blue</div>
+                <p>₱80</p>
+                <button class="add-to-cart" data-name="Blue" data-price="80">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                    <img src="images/pink.png" alt="Product 4">
+                <div class="product-title">Pink</div>
+                <p>₱80</p>
+                <button class="add-to-cart" data-name="Pink" data-price="80">Add to Cart</button>
+            </div>
+        </section>
+
+        <div id="about" class="about-container">
+    <h1>About Us</h1>
+    <p>ScentiPens offer a dual-purpose pen combines practicality with wellness, featuring a smooth-writing ballpoint on one end and a soothing essential oil roller on the other. </p>
+    <p>Designed especially for students and office workers. It offers a convenient way to stay productive and focused throughout the day. 
+        While the pen ensures effortless writing for note-taking, journaling, or completing assignments, the essential oil roller provides a calming aroma that helps reduce stress, improve concentration, 
+        and enhance mental clarity—making it especially useful during study sessions, exams, or long hours of reading.</p>
+
+        <div class="about-card">
+                    <img src="images/tip.png" class="about-image">
+        </div>
+
+     </div>  
+
+        </div>
+        <script>
+  const buttons = document.querySelectorAll('.add-to-cart');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const productName = button.getAttribute('data-name');
+      const productPrice = button.getAttribute('data-price');
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name: productName, price: productPrice });
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      alert(`${productName} has been added to your cart!`);
+    });
+  });
+</script>
+
+</body>
+</html>
