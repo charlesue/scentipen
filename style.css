@@ -46,6 +46,7 @@ nav ul li a {
     width: 100%;
     position: absolute;
     top: 30%;
+    text-align: justify;
 }
 
 .Homepage {
@@ -116,7 +117,7 @@ nav ul li a {
 
 .product-card {
   width: 200px; 
-  padding: 15px;
+  padding: 35px;
   border: 1px solid #dddddd00;
   border-radius: 10px;
   text-align: center;
@@ -129,8 +130,9 @@ nav ul li a {
 }
 
 .product-card img {
-  width: 100%; 
-  height: auto;
+  width: 100%;
+  height: 400px; 
+  object-fit: contain;
   border-radius: 8px;
 }
 
